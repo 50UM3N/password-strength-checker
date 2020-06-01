@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <title>Password Strength</title>
 </head>
+
 <body>
-    <h1>Password Strength Checker</h1>
-    <input id="imputbox" placeholder="Password" type="text" >
-    <p id=strength></p>
-    <div class="weakness">
+    <div class="container">
+        <h1 style="color: #635679; text-align: center; font-size: 36.5px;">Password Strength Checker</h1>
+        <input id="imputbox" placeholder="Password" type="text">
+        <div class="progress"></div>
+        <p id=strength></p>
+        <div class="weakness">
+        </div>
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

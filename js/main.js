@@ -1,5 +1,5 @@
 const imputbox = document.getElementById('imputbox');
-const b = document.getElementById('strength');
+const progress = document.querySelector('.progress');
 const weakness = document.querySelector('.weakness');
 imputbox.addEventListener('input', display);
 
@@ -7,15 +7,17 @@ function display() {
     const array = checkStrength(imputbox.value);
     let strength = 100;
     weakness.innerHTML = "";
+    weakness.style.display='none';
     if (!this.value) return
     array.forEach((value) => {
         if (value == null) return;
-        const node = document.createElement('p');
+        const node = document.createElement('div');
         node.innerHTML = value.id1;
         weakness.appendChild(node);
         strength -= value.id2;
     });
-    b.innerHTML = strength;
+    progress.style.setProperty('--strength', strength);
+    weakness.style.display='block';
 }
 
 function checkStrength(pwd) {
